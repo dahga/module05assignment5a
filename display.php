@@ -56,6 +56,6 @@ function showAllDice()
    for ($i=1; $i<=6; $i++)
    echo "<img src=\"die$i.jpg\">";
 }
-
+//something added here 
 ?>
 </form>
