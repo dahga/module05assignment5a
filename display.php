@@ -1,15 +1,10 @@
 <form>
 <?php
    extract($_REQUEST);
-   //showButtons();
-
-   // note I don't have to check $button for NULL or "clear" in this example 
-   //if ($button == "begin") 
-      
    
    if ($button=="begin")
       showButtons($name);
-   elseif ($button=="show random die"){
+   elseif ($button=="Roll One"){
       showButtons($name);
       showDie();
    }
@@ -17,8 +12,16 @@
       showButtons($name);
       showAllDice();
    }
+   elseif ($button=="Roll All Three"){
+      showButtons($name);
+      threeDie();
+   }
+   elseif ($button=="Roll Two"){
+      showButtons($name);
+      twoDie();
+   }
 
-   if ($button==NULL)
+   if ($button==NULL or $button=="Start Over")
       namePage();
 
 // FUNCTIONS
@@ -26,13 +29,14 @@
 function showButtons(&$name)
 {
    echo <<< HERE
-      <h1>Welcome $name. Lets begin</h1>
-      <h2>Make a selection</h2>
-      <input type="submit" name="button" value="??">
-      <input type="submit" name="button" value="??">
-      <input type="submit" name="button" value="show random die">
+      <h1>Welcome $name! Lets get Rollin</h1>
+      <h2>Roll all three die first.</h2>
+      <input type="submit" name="button" value="Roll All Three">
+      <input type="submit" name="button" value="Roll Two">
+      <input type="submit" name="button" value="Roll One"><br>
       <input type="submit" name="button" value="show all dice">
-      <input type="submit" name="button" value="clear">
+      <input type="submit" name="button" value="Start Over">
+      <input type="hidden" name="name" value="$name">
 HERE;
 }
 
@@ -56,6 +60,26 @@ function showAllDice()
    for ($i=1; $i<=6; $i++)
    echo "<img src=\"die$i.jpg\">";
 }
-//something added here 
+
+function threeDie() 
+{
+   $die1 = rand(1,6);
+   echo "<img src=\"die$die1.jpg\">";
+   $die2 = rand(1,6);
+   echo "<img src=\"die$die2.jpg\">";
+   $die3 = rand(1,6);
+   echo "<img src=\"die$die3.jpg\">";
+}
+
+function twoDie() 
+{
+   $die1 = rand(1,6);
+   echo "<img src=\"die$die1.jpg\">";
+   $die2 = rand(1,6);
+   echo "<img src=\"die$die2.jpg\">";
+   
+}
+
+
 ?>
 </form>
