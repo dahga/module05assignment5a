@@ -42,7 +42,7 @@ HERE;
 /*
 function db()
 {
-if (!( $database = mysqli_connect( "localhost", "nadin-qaqos", "nNFBMMMQ13","nadin-qaqos_dice"))))
+if (!( $database = mysqli_connect( "localhost", "nadin-qaqos", "??????","nadin-qaqos_dice"))))
       die( "Could not connect to database" );
 
     $query = "INSERT INTO score(first, second, third, total) VALUES (";
