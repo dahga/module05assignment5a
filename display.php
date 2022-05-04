@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
+<<<<<<< HEAD
 <a href="http://puff.mnstate.edu/~nd0821wj/private/"> Home </a> <br>
+=======
+<a href="http://puff.mnstate.edu/~jn6160mv/private/"> Home </a> <br>
+>>>>>>> 4f405b499ac937e7db411d0ba5901ec7325eec41
 
 <style>
 mark{
@@ -20,8 +24,11 @@ body {
    
    if ($button=="begin")
       showButtons($name);
+     
+ 
    elseif ($button=="Roll One"){
       showButtons($name);
+     
       showDie();
    }
    //elseif ($button=="show all dice"){
@@ -29,11 +36,13 @@ body {
     //  showAllDice();
   // }
    elseif ($button=="Roll All Three"){
-      showButtons($name);
+      showButtons($name1);
+     
       threeDie();
    }
    if ($button=="Roll Two"){
-      showButtons($name);
+      showButtons($name1);
+     
       twoDie();
    }
 
@@ -45,7 +54,7 @@ body {
 function showButtons(&$name)
 {
    echo <<< HERE
-      <h1>Welcome $name! Lets get Rollin</h1>
+      <h1>Welcome $name1! Lets get Rollin </h1>
       <h2>Roll all three die first.</h2>
       <input type="submit" name="button" value="Roll All Three">
       <input type="submit" name="button" value="Roll Two">
@@ -59,8 +68,13 @@ HERE;
 function namePage()
 {
    echo <<< HERE
-   <h1>Enter Your Name</h1>
-   <h3>Name <input type="text" name="name" autocomplete="off"></h3>
+   <h1 style="text-align:center;">Are you ready to Go to Boston??</h1>
+   <h2 style="text-align:center;"> <i> Well lets get started! </i></h2>
+   <h3><mark> Here are some basic rules for the game before we get started!</mark></h3>
+   <a href= "rules.html"><h3>rules</h3></a>
+   <h4>Enter your name here!</h4>
+   <h5>Player 1: <input type="text" name="name" autocomplete="off"></h5>
+   <h5> Player 2: <input type="text" name="name" autocomplete="off"></h5>
    <input type="submit" name="button" value="begin">
 HERE;
 }
@@ -72,7 +86,7 @@ HERE;
 //   echo "<img src=\"die$i.jpg\">";
 //}
 
-function threeDie() 
+function threeDie()
 {
    $die1 = rand(1,6);
    echo "<img src=\"die$die1.jpg\">";
@@ -107,7 +121,7 @@ function twoDie()
    echo "<img src=\"die$die1.jpg\">";
    $die2 = rand(1,6);
    echo "<img src=\"die$die2.jpg\">";
-   echo "<h1>the largest is " . biggestForTwo($die1, $die2) . "</h1>";
+   echo "<h1>the largest die is: " . biggestForTwo($die1, $die2) . "</h1>";
    
 }
 
