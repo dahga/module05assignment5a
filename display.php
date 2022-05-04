@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<a href="http://puff.mnstate.edu/~nd0821wj/private/"> Home </a> <br>
+
+<style>
+mark{
+    background-color:pink;
+    color: white;}
+body {
+    font-family: 'Courier New', monospace;
+    background-image: url('https://mocah.org/thumbs/1104173-sports-illustration-purple-dice-brand-EA-DICE-magenta-shape-number-recreation-games-font-indoor-games-and-sports-diagram-board-game-dice-game-tabletop-game.jpg');
+    }
+</style>
+
+
 <form>
 <?php
    extract($_REQUEST);
@@ -8,10 +24,10 @@
       showButtons($name);
       showDie();
    }
-   elseif ($button=="show all dice"){
-      showButtons($name);
-      showAllDice();
-   }
+   //elseif ($button=="show all dice"){
+     // showButtons($name);
+    //  showAllDice();
+  // }
    elseif ($button=="Roll All Three"){
       showButtons($name);
       threeDie();
@@ -34,40 +50,12 @@ function showButtons(&$name)
       <input type="submit" name="button" value="Roll All Three">
       <input type="submit" name="button" value="Roll Two">
       <input type="submit" name="button" value="Roll One"><br>
-      <input type="submit" name="button" value="show all dice">
       <input type="submit" name="button" value="Start Over">
       <input type="hidden" name="name" value="$name">
+      
 HERE;
 }
-/*
-function db()
-{
-if (!( $database = mysqli_connect( "localhost", "nadin-qaqos", "??????","nadin-qaqos_dice"))))
-      die( "Could not connect to database" );
 
-    $query = "INSERT INTO score(first, second, third, total) VALUES (";
-    $query = $query . "'$name','$owner','$species','$sex','$birth','$death')";
-   
-   
-   echo "<h4>query: $query</h4>"; 
-   if ( !( $result = mysqli_query( $database,$query ) ) ) {
-      echo "Could not execute query! <br />";
-      die( mysqli_error() );
-   }
-   else 
-      echo "$name added to pet database.";
-   mysqli_close($database);
-   echo <<< HERE
-   <form method="post" action="example3.php">
-   <input type="submit" name="button" value="return">
-   <input type="hidden" name="username" value="$username">
-   <input type="hidden" name="password" value="$password">
-   <input type="hidden" name="dbname" value="$dbname">
-   </form>
-HERE;
-
-}
-*/
 function namePage()
 {
    echo <<< HERE
@@ -78,11 +66,11 @@ HERE;
 }
 
 
-function showAllDice()
-{
-   for ($i=1; $i<=6; $i++)
-   echo "<img src=\"die$i.jpg\">";
-}
+//function showAllDice()
+//{
+//   for ($i=1; $i<=6; $i++)
+//   echo "<img src=\"die$i.jpg\">";
+//}
 
 function threeDie() 
 {
@@ -92,10 +80,10 @@ function threeDie()
    echo "<img src=\"die$die2.jpg\">";
    $die3 = rand(1,6);
    echo "<img src=\"die$die3.jpg\">";
-   echo "<h1>the largest is " . biggestForThree($die1, $die2, $die3) . "</h1>";
+   echo "<h1>the largest is " . biggestForThree($die1, $die2, $die3, $array) . "</h1>";
 }
 
-function biggestForThree($num1,$num2,$num3)
+function biggestForThree($num1,$num2,$num3,$array)
 {
     if ($num1 > $num2)
         if ($num1 > $num3)
@@ -107,9 +95,11 @@ function biggestForThree($num1,$num2,$num3)
             $largest = $num2;
         else
             $largest = $num3;
-    return $largest;
+    //table($largest, $array);
+    //return $array;
+    //print_r($array);
+    return $largest; 
 }
-
 
 function twoDie() 
 {
@@ -127,7 +117,7 @@ function biggestForTwo($num1,$num2)
         $largest = $num1;
     else
         $largest = $num2;
-    
+    table($largest, $largest);
     return $largest;
 }
 
@@ -138,5 +128,30 @@ function showDie()
    echo "<h1>the largest is " . $die1 . "</h1>";
 }
 
+
+function table($die1, $die2, $die3){
+    $a = $die1;
+    $b = $die2;
+    $c = $die3; 
+
+    $result = $a+$b+$c; 
+
+    echo <<< HERE
+    <table border="4">
+        <tr>
+            <td>$a</td>
+            <td>+</td>
+            <td>$b</td>
+            <td>+</td>
+            <td>$c</td>
+            <td>=</td>
+            <td>$result</td>
+        </tr>
+    </table> 
+HERE;
+}
+
 ?>
 </form>
+</body>
+</html>
