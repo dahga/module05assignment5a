@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
 <body>
+<<<<<<< HEAD
 <a href="http://puff.mnstate.edu/~nd0821wj/private/"> Home </a> <br>
+=======
+
+<a href="http://puff.mnstate.edu/~nd0821wj/private/"> Nadin's Home </a> <br>
+======= <br>
+<a href="http://puff.mnstate.edu/~jn6160mv/private/"> Dahga's Home </a> <br>
+
+>>>>>>> c97b97918535ef36ae08df164b10833f92900e6f
 
 <style>
 mark{
@@ -25,6 +33,7 @@ body {
       showButtons($name);
       showDie();
    }
+<<<<<<< HEAD
    */
    //elseif ($button=="show all dice"){
      // showButtons($name);
@@ -43,6 +52,20 @@ body {
    /*
    elseif ($button=="Roll Two"){
       showButtons($name);
+=======
+   elseif ($button=="show all dice"){
+      showButtons($name);
+      showAllDice();
+   }
+   elseif ($button=="Roll All Three"){
+      showButtons($name);
+     
+      threeDie();
+   }
+   if ($button=="Roll Two"){
+      showButtons($name);
+     
+>>>>>>> c97b97918535ef36ae08df164b10833f92900e6f
       twoDie();
    }
    */
@@ -74,13 +97,34 @@ HERE;
 function namePage()
 {
    echo <<< HERE
+<<<<<<< HEAD
    <h1>Enter Your Name</h1>
    <h3>Name <input type="text" name="name" autocomplete="off"></h3>
+=======
+   <h1 style="text-align:center;">Are you ready to Go to Boston??</h1>
+   <h2 style="text-align:center;"> <i> Well lets get started! </i></h2>
+   <h3><mark> Here are some basic rules for the game before we get started!</mark></h3>
+   <a href= "rules.html"><h3>rules</h3></a>
+   <h4>Enter your name here!</h4>
+   <h5>Player 1: <input type="text" name="name" autocomplete="off"></h5>
+   
+>>>>>>> c97b97918535ef36ae08df164b10833f92900e6f
    <input type="submit" name="button" value="begin">
 HERE;
 }
 
+<<<<<<< HEAD
 function threeDie() 
+=======
+
+function showAllDice()
+{
+   for ($i=1; $i<=6; $i++)
+   echo "<img src=\"die$i.jpg\">";
+}
+
+function threeDie()
+>>>>>>> c97b97918535ef36ae08df164b10833f92900e6f
 {
    $die1 = rand(1,6);
    echo "<img src=\"die$die1.jpg\">";
