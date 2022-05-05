@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
-<<<<<<< HEAD
-<a href="http://puff.mnstate.edu/~nd0821wj/private/"> Home </a> <br>
-=======
-<a href="http://puff.mnstate.edu/~jn6160mv/private/"> Home </a> <br>
->>>>>>> 4f405b499ac937e7db411d0ba5901ec7325eec41
+
+<a href="http://puff.mnstate.edu/~nd0821wj/private/"> Nadin's Home </a> <br>
+======= <br>
+<a href="http://puff.mnstate.edu/~jn6160mv/private/"> Dahga's Home </a> <br>
+
 
 <style>
 mark{
@@ -31,17 +31,17 @@ body {
      
       showDie();
    }
-   //elseif ($button=="show all dice"){
-     // showButtons($name);
-    //  showAllDice();
-  // }
+   elseif ($button=="show all dice"){
+      showButtons($name);
+      showAllDice();
+   }
    elseif ($button=="Roll All Three"){
-      showButtons($name1);
+      showButtons($name);
      
       threeDie();
    }
    if ($button=="Roll Two"){
-      showButtons($name1);
+      showButtons($name);
      
       twoDie();
    }
@@ -74,17 +74,17 @@ function namePage()
    <a href= "rules.html"><h3>rules</h3></a>
    <h4>Enter your name here!</h4>
    <h5>Player 1: <input type="text" name="name" autocomplete="off"></h5>
-   <h5> Player 2: <input type="text" name="name" autocomplete="off"></h5>
+   
    <input type="submit" name="button" value="begin">
 HERE;
 }
 
 
-//function showAllDice()
-//{
-//   for ($i=1; $i<=6; $i++)
-//   echo "<img src=\"die$i.jpg\">";
-//}
+function showAllDice()
+{
+   for ($i=1; $i<=6; $i++)
+   echo "<img src=\"die$i.jpg\">";
+}
 
 function threeDie()
 {
