@@ -2,6 +2,8 @@
 <html>
 <body>
 <a href="http://puff.mnstate.edu/~nd0821wj/private/"> Home </a> <br>
+======= <br>
+<a href="http://puff.mnstate.edu/~jn6160mv/private/"> Dahga's Home </a> <br>
 
 <style>
 mark{
@@ -74,6 +76,10 @@ HERE;
 function namePage()
 {
    echo <<< HERE
+   <h1 style="text-align:center;">Are you ready to Go to Boston??</h1>
+   <h2 style="text-align:center;"> <i> Well lets get started! </i></h2>
+   <h3><mark> Here are some basic rules for the game before we get started!</mark></h3>
+   <a href= "rules.html"><h3>rules</h3></a>
    <h1>Enter Your Name</h1>
    <h3>Name <input type="text" name="name" autocomplete="off"></h3>
    <input type="submit" name="button" value="begin">
